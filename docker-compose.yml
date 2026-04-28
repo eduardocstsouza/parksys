@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: parksys-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: parksys
+      POSTGRES_USER: parksys
+      POSTGRES_PASSWORD: parksys123
+    ports:
+      - "5432:5432"
+    volumes:
+      - parksys_postgres_data:/var/lib/postgresql/data
+volumes:
+  parksys_postgres_data:
