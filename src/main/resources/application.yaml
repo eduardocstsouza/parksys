@@ -21,4 +21,8 @@ spring:
     locations: classpath:db/migration
 
 server:
-  port:8080
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
