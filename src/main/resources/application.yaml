@@ -3,9 +3,9 @@ spring:
     name: parksys
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/parksys
-    username: parksys
-    password: parksys123
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/parksys}
+    username: ${DB_USER:parksys}
+    password: ${DB_PASSWORD:parksys123}
     driver-class-name: org.postgresql.Driver
 
   jpa:
