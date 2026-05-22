@@ -17,11 +17,11 @@ public class Movimentacao {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "veiculo_id", nullable = false)
     private Veiculo veiculo;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "vaga_id", nullable = false)
     private Vaga vaga;
 

@@ -2,7 +2,6 @@ package com.parksys.model;
 
 
 import jakarta.persistence.*;
-import lombok.Generated;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,7 +10,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "veiculos")
-@Inheritance
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo")
 @Getter @Setter @NoArgsConstructor
 
@@ -19,7 +18,7 @@ public abstract class Veiculo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
     @Column (unique = true, nullable = false, length = 10)
     private String placa;
